@@ -1,0 +1,7 @@
+name: Hello
+version: 1.0
+main: dangames.App
+author: _dangames
+
+commands:
+  Hello:
