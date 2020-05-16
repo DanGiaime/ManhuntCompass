@@ -10,33 +10,16 @@ public class App extends JavaPlugin{
     
     @Override
     public void onEnable() {
+        this.getCommand("compass").setExecutor(new Compass());
 
+        Compass compassListener = new Compass();
+        this.getServer().getPluginManager().registerEvents(compassListener, this);
     }
 
+        
     @Override
     public void onDisable() {
 
     }
-
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if(label.equalsIgnoreCase("hello")) {
-            if(sender instanceof Player) {
-                //player
-                Player player = (Player) sender;
-                if (player.hasPermission("hello.use")) {
-                    player.sendMessage(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD + "Hey welcome to the server");
-                    return true;
-                }
-                player.sendMessage(ChatColor.RED + "You do not have permission!");
-                return true;
-            }
-            else {
-                sender.sendMessage("Hey console");
-                return true;
-                //console
-
-            }
-        }
-        return false;
-    }
+   
 }

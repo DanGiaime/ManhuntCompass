@@ -4,4 +4,4 @@ main: dangames.App
 author: _dangames
 
 commands:
-  Hello:
+  Compass:
